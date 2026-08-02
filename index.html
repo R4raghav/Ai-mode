@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- मैनिफेस्ट फाइल को लिंक करना -->
+    <link rel="manifest" href="manifest.json">
+    <title>AI Search</title>
+    
+    <script>
+        // अगर यूज़र ने इसे ऐप (standalone) की तरह ओपन किया है, 
+        // तो तुरंत Google AI वाले हिडन लिंक पर भेज दो
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            window.location.replace("https://www.google.com/search?q=&udm=50");
+        }
+    </script>
+    
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .install-text { color: #555; }
+        .btn { padding: 10px 20px; background: #1a73e8; color: white; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; font-size: 16px;}
+    </style>
+</head>
+<body>
+    <h1>AI Search setup</h1>
+    <p class="install-text">ब्राउज़र के मेनू (⋮) पर क्लिक करें और <b>"Install App"</b> या <b>"Add to Home screen"</b> चुनें।</p>
+    
+    <br><br>
+    <!-- अगर कोई बिना इंस्टॉल किए डायरेक्ट लिंक पर जाना चाहे -->
+    <a href="https://www.google.com/search?q=&udm=50" class="btn">Open AI Search Directly</a>
+</body>
+</html>
