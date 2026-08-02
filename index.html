@@ -3,30 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- मैनिफेस्ट फाइल को लिंक करना -->
+    <!-- PWA मैनिफेस्ट -->
     <link rel="manifest" href="manifest.json">
-    <title>AI Search</title>
+    <meta name="theme-color" content="#000000">
+    <title>AI Mode</title>
     
     <script>
-        // अगर यूज़र ने इसे ऐप (standalone) की तरह ओपन किया है, 
-        // तो तुरंत Google AI वाले हिडन लिंक पर भेज दो
+        // अगर ऐप इंस्टॉल होकर खुला है, तो तुरंत AI सर्च पर भेज दो
         if (window.matchMedia('(display-mode: standalone)').matches) {
             window.location.replace("https://www.google.com/search?q=&udm=50");
         }
     </script>
     
     <style>
-        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-        .install-text { color: #555; }
-        .btn { padding: 10px 20px; background: #1a73e8; color: white; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; font-size: 16px;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            /* Apple/Google जैसा क्लीन फॉन्ट */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000000; /* प्रीमियम डार्क बैकग्राउंड */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            /* टेक्स्ट पर प्रीमियम सिल्वर/ग्रे ग्रेडिएंट इफ़ेक्ट */
+            background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+        }
+        .btn {
+            padding: 12px 35px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: 1px solid #333333;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .btn:hover {
+            background-color: #333333;
+            border-color: #555555;
+            box-shadow: 0 6px 20px rgba(255,255,255,0.1);
+        }
     </style>
 </head>
 <body>
-    <h1>AI Search setup</h1>
-    <p class="install-text">ब्राउज़र के मेनू (⋮) पर क्लिक करें और <b>"Install App"</b> या <b>"Add to Home screen"</b> चुनें।</p>
+
+    <h1>AI Mode</h1>
     
-    <br><br>
-    <!-- अगर कोई बिना इंस्टॉल किए डायरेक्ट लिंक पर जाना चाहे -->
-    <a href="https://www.google.com/search?q=&udm=50" class="btn">Open AI Search Directly</a>
+    <!-- अगर कोई बिना इंस्टॉल किए ब्राउज़र में खोलता है -->
+    <a href="https://www.google.com/search?q=&udm=50" class="btn">Launch</a>
+
 </body>
 </html>
